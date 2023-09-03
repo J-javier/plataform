@@ -1,0 +1,86 @@
+.cont_img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 25px;
+}
+
+.imagen{
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.contenedor-imagenes{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagenes{
+    object-fit: contain;
+    overflow: hidden;
+}
+
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Estilos para los campos de entrada y botones */
+.input-field {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn2 {
+    background-color: #485768;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

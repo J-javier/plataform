@@ -1,0 +1,36 @@
+.cont_img{
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 25px;
+}
+
+.imagen{
+    object-fit: contain;
+    overflow: hidden;
+    border-radius: 25px;
+}
+
+.contenedor-imagenes{
+    height: 1.5rem;
+    width: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagenes{
+    object-fit: contain;
+    overflow: hidden;
+}
+
+
+/* This is for the toggle */
+
+.toggle-container {
+    display: none;
+}
+
+.toggle-container.show {
+    display: flex;
+    gap: 10px;
+}
