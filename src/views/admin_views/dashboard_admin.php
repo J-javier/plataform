@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/dashboard.css">
+    <script src="/src/script/script.js" defer></script>
     <title>Admin Dashboard</title>
 </head>
 <body class="h-screen w-screen">
@@ -61,13 +62,20 @@
         <section class="w-[80%] h-[100%] bg-[#f5f7fb] flex flex-col items-center">
             <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between text-[#cac8c6] shadow-md">
                  <div class="flex items-center">
-                    <div><img src="/src/images/menu.svg" alt=""></div>
+                    <div><img src="/src/images/menu.svg" alt="menu"></div>
                     <h1>Home</h1>
                 </div>
-                 <div class="flex items-center">
-                    <h1>Administrador</h1>
-                    <div><img src="/src/images/expand_more.svg" alt=""></div>
-                 </div>
+                 <div class="flex items-center pruebaaa">
+                    <!-- <h1>Administrador</h1> -->
+                    <div class="dropdown ">
+                        <button id="dropdownBtn" class="dropdown-button text-[#cac8c6]">Administrador
+                             <span class="arrow text-[#cac8c6]">&#9660;</span>
+                        </button>
+                        <div id="dropdownContent" class="dropdown-content">
+                            <a href="#">Perfil</a>
+                            <a href="#">Log Out</a>
+                        </div>
+                    </div>
             </header>
             <div class="w-[98%] h-[90%]">
                 <section class="w-full h-[11%] flex justify-between items-center">

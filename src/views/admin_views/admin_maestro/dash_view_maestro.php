@@ -16,7 +16,7 @@
                 <h1 class="pl-2 text-[1.3rem]">Universidad</h1>
             </header>
             <section class="h-[13%] flex flex-col justify-center  border-gray-500 border-t border-b">
-                <h1 class="mb-3 text-[1.3rem] pl-3 ">admin</h1>
+                <a href="/src/views/admin_views/dashboard_admin.php"><h1 class="mb-3 text-[1.3rem] pl-3 ">admin</h1></a>
                 <h2 class="text-[1.1rem] pl-3">Administrador</h2>
             </section>
         
@@ -73,7 +73,7 @@
             <div class="w-[98%] h-[90%]">
                 <section class="w-full h-[9%] flex justify-between items-center">
                     <h1 class=" text-[1.2rem]" >Lista de Maestros</h1>
-                    <h2 class=" text-[#cac8c6]"><span class="text-[#97b4e3]">Home</span> / Permiso</h2>
+                    <h2 class=" text-[#cac8c6]"><span class="text-[#97b4e3]">Home</span> / Maestro</h2>
                 </section>
                 <section class=" h-[40%] w-full">
                     <div class="w-full h-[15%] border bg-[#ffffff] text-[#868684] flex text-[.8rem] justify-between items-center">
@@ -120,28 +120,28 @@
             <h2 class="text-[2rem]">Editar Maestro</h2>
             <form action="/tu_script_de_php.php" method="POST">
                 <div class="form-group">
-                    <label class="font-bold " for="correo">Correo Electronico</label>
-                    <input type="email" name="correo" id="correo" class="input-field" readonly>
+                    <label class="font-bold " for="correo2">Correo Electronico</label>
+                    <input type="email" name="correo2" id="correo2" class="input-field" readonly>
                 </div>
                 <div class="form-group">
-                    <label class="font-bold " for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre" class="input-field">
+                    <label class="font-bold " for="nombre2">Nombre</label>
+                    <input type="text" name="nombre2" id="nombre2" class="input-field">
                 </div>
                 <div class="form-group">
-                    <label class="font-bold " for="apellido">Apellido</label>
-                    <input type="text" name="apellido" id="apellido" class="input-field">
+                    <label class="font-bold " for="apellido2">Apellido</label>
+                    <input type="text" name="apellido2" id="apellido2" class="input-field">
                 </div>
                 <div class="form-group">
-                    <label class="font-bold " for="direccion">Direccion</label>
-                    <input type="text" name="direccion" id="direccion" class="input-field">
+                    <label class="font-bold " for="direccion2">Direccion</label>
+                    <input type="text" name="direccion2" id="direccion2" class="input-field">
                 </div>
                 <div class="form-group">
-                    <label class="font-bold " for="fecha">Fecha de nacimiento</label>
-                    <input type="text" name="fecha" id="fecha" class="input-field">
+                    <label class="font-bold " for="fecha2">Fecha de nacimiento</label>
+                    <input type="text" name="fecha2" id="fecha2" class="input-field">
                 </div>
                 <div class="form-group">
-                    <label class="font-bold " for="role">Clase Asignada</label>
-                    <select name="role" id="role" class="input-field">
+                    <label class="font-bold " for="role2">Clase Asignada</label>
+                    <select name="role2" id="role2" class="input-field">
                         <option value="admin">Matematicas</option>
                         <option value="maestro">Contabilidad</option>
                         <option value="alumno">Ciencias Naturales</option>
@@ -158,7 +158,7 @@
 
     <!-- Modal para crear a un maestro -->
 
-    <div id="myModal2" class="modal2">
+    <div id="myModal2" class="modal">
         <div class="modal-content">
             <span id="closeModal2" class="close">&times;</span>
             <h2 class="text-[2rem]">Agregar Maestro</h2>
@@ -166,6 +166,10 @@
                 <div class="form-group">
                     <label class="font-bold " for="correo">Correo Electronico</label>
                     <input type="email" name="correo" id="correo" class="input-field" readonly>
+                </div>
+                <div class="form-group">
+                    <label class="font-bold " for="contrasena">Contraseña</label>
+                    <input type="password" name="contrasena" id="contrasena" class="input-field" readonly>
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="nombre">Nombre</label>

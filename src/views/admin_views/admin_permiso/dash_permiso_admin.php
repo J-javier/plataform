@@ -16,7 +16,7 @@
                 <h1 class="pl-2 text-[1.3rem]">Universidad</h1>
             </header>
             <section class="h-[13%] flex flex-col justify-center  border-gray-500 border-t border-b">
-                <h1 class="mb-3 text-[1.3rem] pl-3 ">admin</h1>
+                <a href="/src/views/admin_views/dashboard_admin.php"><h1 class="mb-3 text-[1.3rem] pl-3 ">admin</h1></a>
                 <h2 class="text-[1.1rem] pl-3">Administrador</h2>
             </section>
         
