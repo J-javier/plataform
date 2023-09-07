@@ -14,15 +14,15 @@
         </section>
         <section class="w-[25%] h-[30%] border bg-white flex flex-col justify-around items-center" >
             <h1 class="text-[#a2a3a6] text-[.8rem]">Bienvenido Ingresa con tu cuenta</h1>
-            <form action="" method="post" class="w-full flex flex-col justify-around items-center">
+            <form action="/index.php" method="post" class="w-full flex flex-col justify-around items-center">
                 <div class="flex justify-between mb-7 div">
                     <label for="correo" hidden></label>
-                    <input type="text" name="correo" id="correo" class="border-none">
+                    <input type="text" name="correo" id="correo" class="border-none" required>
                     <div class="img"><img src="/src/images/email.svg" alt=""></div>                
                 </div>
                 <div class="flex justify-between mb-4  div">
                     <label for="contrasena" hidden></label>
-                    <input type="text" name="contrasena" id="contrasena" class="border-none">
+                    <input type="password" name="contrasena" id="contrasena" class="border-none" required>
                     <div class="img"><img src="/src/images/lock.svg" alt=""></div>
                 </div>
                 <div class="flex justify-end w-[80%]">

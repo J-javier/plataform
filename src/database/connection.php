@@ -1,6 +1,6 @@
 <?php
 
-$file = $_SERVER["DOCUMENT_ROOT"] . "/.env";
+$file = $_SERVER["DOCUMENT_ROOT"] . "/.env" ;
 
 if (file_exists($file)){
     $variables = parse_ini_file($file);
@@ -21,10 +21,11 @@ class data
             $username = $_ENV["DB_USERNAME"];
             $password = $_ENV["DB_PASSWORD"];
             $port = $_ENV["DB_PORT"];
-            $dbname = $_ENV["DB_DATA"];
+            $dbname = $_ENV["DB_DATABASE"];
 
             $attributes=[PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION];
-            $dsn = "mysql:host=$host;port=$port;dbname=$dbname ";
+            $dsn = "mysql:host=$host;port=$port;dbname=$dbname";
+           
 
             $this->pdo = new PDO($dsn,$username,$password,$attributes);
 

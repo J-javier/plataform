@@ -1,5 +1,7 @@
 <?php
 
+require_once( "./src/models/userVerification.php");
+
 
 class mainpage
 {
@@ -7,6 +9,16 @@ class mainpage
     {
         include_once($_SERVER["DOCUMENT_ROOT"] . "/src/views/login.php" );
     }
+
+    public function mainmenu($datos)
+    {
+        $datos2 = $datos;
+        $verification = new vefication();
+        $verification->access($datos2);
+        
+    }
+
+
 }
 
 
