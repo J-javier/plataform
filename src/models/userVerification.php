@@ -35,7 +35,9 @@ class vefication
         $admin_result = $coneccion->connect()->query($admin_query);
         $alumno_result = $coneccion->connect()->query($alumno_query);
         $maestro_result = $coneccion->connect()->query($maestro_query);
+    
 
+        
 
     }
 
