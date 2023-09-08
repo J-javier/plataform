@@ -1,7 +1,5 @@
 <?php
-
 require_once( "./src/models/userVerification.php");
-
 
 class mainpage
 {
@@ -15,11 +13,8 @@ class mainpage
         $datos2 = $datos;
         $verification = new vefication();
         $verification->access($datos2);
-        
     }
 
-
 }
-
 
 ?>
