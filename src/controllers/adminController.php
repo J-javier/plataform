@@ -1,5 +1,5 @@
 <?php
-require_once( "./src/models/userVerification.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/userVerification.php" );
 
 class mainpage
 {
@@ -14,7 +14,5 @@ class mainpage
         $verification = new vefication();
         $verification->access($datos2);
     }
-
 }
-
 ?>

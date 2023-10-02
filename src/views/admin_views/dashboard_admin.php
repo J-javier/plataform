@@ -67,15 +67,23 @@
                 </div>
                  <div class="flex items-center pruebaaa">
                     <!-- <h1>Administrador</h1> -->
-                    <div class="dropdown ">
-                        <button id="dropdownBtn" class="dropdown-button text-[#cac8c6]">Administrador
-                             <span class="arrow text-[#cac8c6]">&#9660;</span>
-                        </button>
-                        <div id="dropdownContent" class="dropdown-content">
-                            <a href="#">Perfil</a>
-                            <a href="#">Log Out</a>
+                    <div class="w-[7rem] h-auto relative">
+                    <div class="dropdown">
+                        <div class="flex flex-row items-center w-50">
+                            <div>
+                                <button id="dropdownBtn" class="dropdown-button font-semibold ">Admin<span class="arrow">&#9660;</span></button>
+                            </div>
+                            <div id="dropdownContent" class="dropdown-content">
+                                <!-- <a href="/src/views/profile/profile.php">
+                                    <div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div>
+                                </a> -->
+                                <a href="/src/views/logout.php" >
+                                    <div class="flex text-[#EB5757] pvisual"><img src="/src/images/arrow.svg" alt="img" class="pr-3 ">Logout</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                </div>
             </header>
             <div class="w-[98%] h-[90%]">
                 <section class="w-full h-[11%] flex justify-between items-center">

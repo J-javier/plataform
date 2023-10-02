@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/styles_admin/edit_maestro_style.css">
-    <script src="/src/script/admin_maestro/script.js" defer ></script>
+    <script src="/src/script/admin_maestro/script.js" defer></script>
     <title>Admin Dashboard</title>
 </head>
+
 <body class="h-screen w-screen">
     <main class="h-full w-full flex flex-row">
         <div class="w-[20%] h-[100%] bg-[#343b40] text-[#959ca2] flex-col">
@@ -16,10 +18,12 @@
                 <h1 class="pl-2 text-[1.3rem]">Universidad</h1>
             </header>
             <section class="h-[13%] flex flex-col justify-center  border-gray-500 border-t border-b">
-                <a href="/src/views/admin_views/dashboard_admin.php"><h1 class="mb-3 text-[1.3rem] pl-3 ">admin</h1></a>
+                <a href="/src/views/admin_views/dashboard_admin.php">
+                    <h1 class="mb-3 text-[1.3rem] pl-3 ">admin</h1>
+                </a>
                 <h2 class="text-[1.1rem] pl-3">Administrador</h2>
             </section>
-        
+
             <section class="flex flex-col items-center h-[20$] justify-evenly">
                 <h1 class=" my-5">MENU ADMINISTRACION</h1>
                 <div class="flex flex-col w-full pl-3 gap-3">
@@ -60,19 +64,35 @@
         </div>
 
         <section class="w-[80%] h-[100%] bg-[#f5f7fb] flex flex-col items-center">
-            <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between text-[#cac8c6] shadow-md">
-                 <div class="flex items-center">
-                    <a href="/src/views/admin_views/dashboard_admin.php"><div><img src="/src/images/menu.svg" alt="menu"></div></a>
+            <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between items-center text-[#cac8c6] shadow-md">
+                <div class="flex items-center">
+                    <a href="/src/views/admin_views/dashboard_admin.php">
+                        <div><img src="/src/images/menu.svg" alt="menu"></div>
+                    </a>
                     <h1>Home</h1>
                 </div>
-                 <div class="flex items-center">
-                    <h1>Administrador</h1>
-                    <div><img src="/src/images/expand_more.svg" alt="expand"></div>
-                 </div>
+
+                <div class="w-[7rem] h-auto relative">
+                    <div class="dropdown">
+                        <div class="flex flex-row items-center w-50">
+                            <div>
+                                <button id="dropdownBtn" class="dropdown-button font-semibold ">Admin<span class="arrow">&#9660;</span></button>
+                            </div>
+                            <div id="dropdownContent" class="dropdown-content">
+                                <!-- <a href="/src/views/profile/profile.php">
+                                    <div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div>
+                                </a> -->
+                                <a href="/src/views/logout.php" >
+                                    <div class="flex text-[#EB5757] pvisual"><img src="/src/images/arrow.svg" alt="img" class="pr-3 ">Logout</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
             <div class="w-[98%] h-[90%]">
                 <section class="w-full h-[9%] flex justify-between items-center">
-                    <h1 class=" text-[1.2rem]" >Lista de Alumnos</h1>
+                    <h1 class=" text-[1.2rem]">Lista de Alumnos</h1>
                     <h2 class=" text-[#cac8c6]"><span class="text-[#97b4e3]">Home</span> / Alumno</h2>
                 </section>
                 <section class=" h-[40%] w-full">
@@ -83,36 +103,36 @@
                     <div class="border h-full w-full ">
                         <table class="w-full">
                             <thead class="border border-slate-300">
-                                    <th>#</th>
-                                    <th class="border border-slate-300">DNI</th>
-                                    <th>Nombre</th>
-                                    <th class="border border-slate-300">Correo</th>
-                                    <th>Direccion</th>
-                                    <th class="border border-slate-300">Fec. de Nacimiento</th>
-                                    <th class="border border-slate-300">Acciones</th>
+                                <th>#</th>
+                                <th class="border border-slate-300">DNI</th>
+                                <th>Nombre</th>
+                                <th class="border border-slate-300">Correo</th>
+                                <th>Direccion</th>
+                                <th class="border border-slate-300">Fec. de Nacimiento</th>
+                                <th class="border border-slate-300">Acciones</th>
                             </thead>
                             <tbody>
-                                <?php 
-                                    require_once($_SERVER["DOCUMENT_ROOT"] ."/src/database/connection.php" );  
-                                    $query = "SELECT id_alumno, name_alumno, apellido_alumno, matricula, correo_alumno, address, fechaNacimiento FROM alumno" ;
-                                    $conn = new data();
-                                    $resultado = $conn->connect()->query($query);
-                                    while ($row = $resultado->fetch(PDO::FETCH_ASSOC)) {
+                                <?php
+                                require_once($_SERVER["DOCUMENT_ROOT"] . "/src/database/connection.php");
+                                $query = "SELECT id_alumno, name_alumno, apellido_alumno, matricula, correo_alumno, address, fechaNacimiento FROM alumno";
+                                $conn = new data();
+                                $resultado = $conn->connect()->query($query);
+                                while ($row = $resultado->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
-                                <tr class="border border-slate-300 bg-[#f2f2f2] text-[.7rem]">
-                                    <td><?= $row["id_alumno"]?></td>
-                                    <td class="border border-slate-300"><?= $row["matricula"]?></td>
-                                    <td class="border border-slate-300"><?= $row['name_alumno'] . " ".$row["apellido_alumno"] ?></td>
-                                    <td class="border border-slate-300 pl-2 " ><?= $row['correo_alumno'] ?></td>
-                                    <td class="border border-slate-300 pl-2 " ><?= $row['address'] ?></td>
-                                    <td><span class="border-none text-[black] px-1 py-1 rounded-lg"><?= $row['fechaNacimiento'] ?></span></td>
-                                    <td class="border border-slate-300">
-                                        <div class="w-full flex justify-center gap-2">
-                                            <img src="/src/images/pencil.svg" alt="img" id="showModalButton">
-                                            <img src="/src/images/trash.svg" alt="trash">
-                                        </div>
-                                    </td>
-                                </tr>
+                                    <tr class="border border-slate-300 bg-[#f2f2f2] text-[.7rem]">
+                                        <td><?= $row["id_alumno"] ?></td>
+                                        <td class="border border-slate-300"><?= $row["matricula"] ?></td>
+                                        <td class="border border-slate-300"><?= $row['name_alumno'] . " " . $row["apellido_alumno"] ?></td>
+                                        <td class="border border-slate-300 pl-2 "><?= $row['correo_alumno'] ?></td>
+                                        <td class="border border-slate-300 pl-2 "><?= $row['address'] ?></td>
+                                        <td><span class="border-none text-[black] px-1 py-1 rounded-lg"><?= $row['fechaNacimiento'] ?></span></td>
+                                        <td class="border border-slate-300">
+                                            <div class="w-full flex justify-center gap-2">
+                                                <img src="/src/images/pencil.svg" alt="img" id="showModalButton">
+                                                <img src="/src/images/trash.svg" alt="trash">
+                                            </div>
+                                        </td>
+                                    </tr>
                                 <?php } ?>
                             </tbody>
                         </table>
@@ -126,7 +146,7 @@
         <div class="modal-content">
             <span id="closeModal" class="close">&times;</span>
             <h2 class="text-[2rem]">Editar Alumno</h2>
-            <form action="/tu_script_de_php.php" method="POST">
+            <form action="/index.php" method="POST">
                 <div class="form-group">
                     <label class="font-bold " for="dni2">DNI</label>
                     <input type="text" name="dni2" id="dni2" class="input-field">
@@ -166,7 +186,7 @@
         <div class="modal-content">
             <span id="closeModal2" class="close">&times;</span>
             <h2 class="text-[2rem]">Agregar Alumno</h2>
-            <form action="/tu_script_de_php.php" method="POST">
+            <form action="/index.php" method="POST">
                 <div class="form-group">
                     <label class="font-bold" for="dni">DNI</label>
                     <input type="email" name="dni" id="dni" class="input-field" readonly>
@@ -204,4 +224,5 @@
     </div>
 
 </body>
+
 </html>

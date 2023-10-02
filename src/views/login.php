@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/src/styles/login.css">
     <link href="/dist/output.css" rel="stylesheet">
-    <title>Login Page</title>
+    <title>Login Page</title> 
 </head>
 <body class="w-screen h-screen">
     <main class="w-full h-full flex flex-col justify-start items-center bg-[#fff5d2]">

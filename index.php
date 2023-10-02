@@ -1,6 +1,6 @@
 <?php
 
-require_once($_SERVER["DOCUMENT_ROOT"] . "/src/controllers/user_controller.php" );
+require_once($_SERVER["DOCUMENT_ROOT"] . "/src/controllers/adminController.php" );
 $controller = new mainpage();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST"  && isset($_POST) ) {
@@ -17,4 +17,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"  && isset($_POST) ) {
     $controller->index();
 }
 
-?>
+?> 

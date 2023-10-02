@@ -60,15 +60,28 @@
         </div>
 
         <section class="w-[80%] h-[100%] bg-[#f5f7fb] flex flex-col items-center">
-            <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between text-[#cac8c6] shadow-md">
+            <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between items-center text-[#cac8c6] shadow-md">
                  <div class="flex items-center">
                     <a href="/src/views/admin_views/dashboard_admin.php"><div><img src="/src/images/menu.svg" alt="menu"></div></a>
                     <h1>Home</h1>
                 </div>
-                 <div class="flex items-center">
-                    <h1>Administrador</h1>
-                    <div><img src="/src/images/expand_more.svg" alt="expand"></div>
-                 </div>
+                <div class="w-[7rem] h-auto relative">
+                    <div class="dropdown">
+                        <div class="flex flex-row items-center w-50">
+                            <div>
+                                <button id="dropdownBtn" class="dropdown-button font-semibold ">Admin<span class="arrow">&#9660;</span></button>
+                            </div>
+                            <div id="dropdownContent" class="dropdown-content">
+                                <!-- <a href="/src/views/profile/profile.php">
+                                    <div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div>
+                                </a> -->
+                                <a href="/src/views/logout.php" >
+                                    <div class="flex text-[#EB5757] pvisual"><img src="/src/images/arrow.svg" alt="img" class="pr-3 ">Logout</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
             <div class="w-[98%] h-[90%]">
                 <section class="w-full h-[9%] flex justify-between items-center">
@@ -90,11 +103,17 @@
                                     <th class="border border-slate-300">Acciones</th>
                             </thead>
                             <tbody>
+                            <?php require_once($_SERVER["DOCUMENT_ROOT"] ."/src/database/connection.php" );  
+                                $query = "SELECT id_maestro, name_maestro, apellido_maestro, correo_maestro, address, fechaNacimiento FROM maestro" ;
+                                $conn = new data();
+                                $resultado = $conn->connect()->query($query);
+                                while ($row = $resultado->fetch(PDO::FETCH_ASSOC)) {
+                                ?>
                                 <tr class="border border-slate-300 bg-[#f2f2f2] text-[.7rem]">
                                     <td> 1</td>
                                     <td class="border border-slate-300">Matematicas</td>
-                                    <td class="border border-slate-300"><span class="border-none text-[black] bg-[#fbc00a] px-1 py-1 rounded-lg">Jorge Alarcons</span></td>
-                                    <td class="border border-slate-300 pl-2 "><span class="border-none text-[black] bg-[#fbc00a] px-1 py-1 rounded-lg">6</span></td>
+                                    <td class="border border-slate-300"><span class="border-none text-[black] px-1 py-1 rounded-lg">Jorge Alarcons</span></td>
+                                    <td class="border border-slate-300 pl-2 "><span class="border-none text-[black] px-1 py-1 rounded-lg">6</span></td>
                                     <td class="border border-slate-300">
                                         <div class="w-full flex justify-center gap-2">
                                             <img src="/src/images/pencil.svg" alt="img" id="showModalButton">
@@ -102,6 +121,7 @@
                                         </div>
                                     </td>
                                 </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
