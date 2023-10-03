@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["correo_alumno"]) || !isset($_SESSION["contrasena_alumno"])) {
+    header("Location: /src/views/login.php");
+    exit(); 
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
