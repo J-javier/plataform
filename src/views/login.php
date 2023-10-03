@@ -30,6 +30,15 @@
                 </div>
             </form>
         </section>
+        <?php 
+        session_start();
+        if (isset($_SESSION["mensaje_error_login"])) {
+            echo($_SESSION["mensaje_error_login"]);
+            unset($_SESSION["mensaje_error_login"]);
+        }else {
+            session_destroy();
+        }
+    ?>
     </main>
 </body>
 </html>

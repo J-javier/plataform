@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/userVerification.php" );
 
-class mainpage
+class mainpage 
 {
     public function index()
     {

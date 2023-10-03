@@ -9,31 +9,65 @@ class verification
         $informacion = new data();
         $correo = $detail["correo"];
         $contrasena = $detail["contrasena"];
-        $consulta = "SELECT * FROM user WHERE email = :correo ";
-        $stmt = $informacion->connect()->prepare($consulta);
-        $stmt->bindParam(':correo', $correo);
-        $stmt->execute();
-        $detalle = $stmt->fetch(PDO::FETCH_ASSOC);
+        
+        // Consulta para verificar en la tabla Alumno
+        $consultaAlumno = "SELECT * FROM Alumno WHERE correo_alumno = :correo ";
+        $stmtAlumno = $informacion->connect()->prepare($consultaAlumno);
+        $stmtAlumno->bindParam(':correo', $correo);
+        $stmtAlumno->execute();
+        $detalleAlumno = $stmtAlumno->fetch(PDO::FETCH_ASSOC);
 
-        if ($detalle) {
-            if(password_verify($contrasena, $detalle['user_password'])) {
+        // Consulta para verificar en la tabla Administrador
+        $consultaAdmin = "SELECT * FROM Administrador WHERE correo_admin = :correo ";
+        $stmtAdmin = $informacion->connect()->prepare($consultaAdmin);
+        $stmtAdmin->bindParam(':correo', $correo);
+        $stmtAdmin->execute();
+        $detalleAdmin = $stmtAdmin->fetch(PDO::FETCH_ASSOC);
+
+        // Consulta para verificar en la tabla Maestro
+        $consultaMaestro = "SELECT * FROM Maestro WHERE correo_maestro = :correo ";
+        $stmtMaestro = $informacion->connect()->prepare($consultaMaestro);
+        $stmtMaestro->bindParam(':correo', $correo);
+        $stmtMaestro->execute();
+        $detalleMaestro = $stmtMaestro->fetch(PDO::FETCH_ASSOC);
+
+        if ($detalleAlumno || $detalleAdmin || $detalleMaestro) {
+            if ($detalleAlumno && password_verify($contrasena, $detalleAlumno['password_alumno'])) {
+                // Usuario encontrado en la tabla Alumno y contraseña correcta
                 session_start();
-                $_SESSION["correo_usuario"] = $correo;
-                $_SESSION["contrasena_usuario"] = $contrasena;
-                header("Location: /src/views/profile/profile.php");
+                $_SESSION["correo_alumno"] = $correo;
+                $_SESSION["contrasena_alumno"] = $contrasena;
+                header("Location: /src/views/alumno_views/dashboard_alum.php");
                 die();
-            }else {
+            } elseif ($detalleAdmin && password_verify($contrasena, $detalleAdmin['password_admin'])) {
+                // Usuario encontrado en la tabla Administrador y contraseña correcta
+                session_start();
+                $_SESSION["correo_admi"] = $correo;
+                $_SESSION["contrasena_admin"] = $contrasena;
+                header("Location: /src/views/admin_views/dashboard_admin.php"); 
+                die();
+            } elseif ($detalleMaestro && password_verify($contrasena, $detalleMaestro['password_maestro'])) {
+                // Usuario encontrado en la tabla Maestro y contraseña correcta
+                session_start();
+                $_SESSION["correo_maestro"] = $correo;
+                $_SESSION["contrasena_maestro"] = $contrasena;
+                header("Location: /src/views/maestro_views/dashboard_maestro.php"); 
+                die();
+            } else {
+                // Contraseña incorrecta en todas las tablas
                 session_start();
                 $_SESSION["mensaje_error_login"] = "Contraseña incorrecta, por favor intente de nuevo.";
-                header("Location: /src/views/login/login.php");
+                header("Location: /src/views/login.php");
                 die();
             }
-        }else {
+        } else {
+            // Usuario no encontrado en ninguna tabla
             session_start();
             $_SESSION["mensaje_error_login"] = "El usuario no existe, por favor regístrese.";
-            header("Location: /src/views/login/login.php");
+            header("Location: /src/views/login.php");
             die();
         }
+
         $informacion->disconnect();
     }
     

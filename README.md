@@ -1,4 +1,7 @@
 PLATAFORMA ESTUDIANTIL 
 
-'admin1@example.com', 'contraseña1'
+'admin@admin.com', 'admin'
 
+'maestro@maestro.com' 'maestro'
+
+'alumno@alumno.com' 'alumno'
