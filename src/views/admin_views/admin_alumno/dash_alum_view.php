@@ -220,7 +220,7 @@
                     <button type="button" id="closeModalButton2" class="btn2">Close</button>
                     <button type="submit" class="btn" name="register">Guardar Cambios</button>
                 </div>
-            </form>
+            </form> 
         </div>
     </div>
 

@@ -13,15 +13,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST" ){
     if(isset($_POST["registrarC"])){
         $controller->addClase($_POST);
     }
-    /* if (isset($_POST["save"])) {
-        $controller->inscripcion($_POST);
-    } */
+    
     if (isset($_POST["login"])) {
         $controller->login($_POST);
     } 
-   /*  if (isset($_POST["update"])) {
-        $controller->update($_POST);
-    }  */
 
 }else {
     $controller->index();

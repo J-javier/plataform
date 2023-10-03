@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/styles_admin/edit_maestro_style.css">
-    <script src="/src/script/admin_maestro/script.js" defer ></script>
+    <script src="/src/script/student_script/script.js" defer ></script>
     <title>Admin Dashboard</title>
 </head>
 <body class="h-screen w-screen">
@@ -36,15 +36,28 @@
         </div>
 
         <section class="w-[80%] h-[100%] bg-[#f5f7fb] flex flex-col items-center">
-            <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between text-[#cac8c6] shadow-md">
+            <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between items-center text-[#cac8c6] shadow-md">
                  <div class="flex items-center">
                     <a href="/src/views/maestro_views/dashboard_maestro.php"><div><img src="/src/images/menu.svg" alt="menu"></div></a>
                     <h1>Home</h1>
                 </div>
-                 <div class="flex items-center">
-                    <h1>Maestro</h1>
-                    <div><img src="/src/images/expand_more.svg" alt="expand"></div>
-                 </div>
+                <div class="w-[7rem] h-auto relative">
+                    <div class="dropdown">
+                        <div class="flex flex-row items-center w-50"> 
+                            <div>
+                                <button id="dropdownBtn" class="dropdown-button font-semibold ">Maestro<span class="arrow">&#9660;</span></button>
+                            </div>
+                            <div id="dropdownContent" class="dropdown-content">
+                                <!-- <a href="/src/views/profile/profile.php">
+                                    <div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div>
+                                </a> -->
+                                <a href="/src/views/logout.php" >
+                                    <div class="flex text-[#EB5757] pvisual"><img src="/src/images/arrow.svg" alt="img" class="pr-3 ">Logout</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
             <div class="w-[98%] h-[90%]">
                 <section class="w-full h-[9%] flex justify-between items-center">

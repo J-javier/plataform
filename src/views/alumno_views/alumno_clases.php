@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/styles_admin/edit_maestro_style.css">
+    <script src="/src/script/student_script/script.js" defer></script>
    
     <title>Student Clases</title>
 </head>
@@ -39,26 +40,33 @@
                             <h3 class="text-[1.1rem]">Administra tus Clases</h3>
                         </div>
                     </a>
-                </div>
+                </div> 
             </section>
         </div>
 
         <section class="w-[80%] h-[100%] bg-[#f5f7fb] flex flex-col items-center">
-            <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between text-[#cac8c6] shadow-md">
+            <header class="w-[98%] h-[8%] border bg-[#ffffff] flex justify-between items-center text-[#cac8c6] shadow-md">
                  <div class="flex items-center">
                     <a href="/src/views/admin_views/dashboard_admin.php"><div><img src="/src/images/menu.svg" alt="menu"></div></a>
                     <h1>Home</h1>
                 </div>
-                 <div class="flex items-center">
-                    <div class="dropdown ">
-                        <button id="dropdownBtn" class="dropdown-button text-[#cac8c6]">Student name
-                             <span class="arrow text-[#cac8c6]">&#9660;</span>
-                        </button>
-                        <div id="dropdownContent" class="dropdown-content">
-                            <a href="#">Perfil</a>
-                            <a href="#">Log Out</a>
+                <div class="w-[7rem] h-auto relative">
+                    <div class="dropdown">
+                        <div class="flex flex-row items-center w-50">
+                            <div>
+                                <button id="dropdownBtn" class="dropdown-button font-semibold ">Student<span class="arrow">&#9660;</span></button>
+                            </div>
+                            <div id="dropdownContent" class="dropdown-content">
+                                <!-- <a href="/src/views/profile/profile.php">
+                                    <div class="flex pvisual"><img src="/src/images/account.svg" alt="img" class="pr-2 ">My Profile</div>
+                                </a> -->
+                                <a href="/src/views/logout.php" >
+                                    <div class="flex text-[#EB5757] pvisual"><img src="/src/images/arrow.svg" alt="img" class="pr-3 ">Logout</div>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                </div>
             </header>
             <div class="w-[98%] h-[90%]">
                 <section class="w-full h-[9%] flex justify-between items-center">
