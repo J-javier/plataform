@@ -6,11 +6,35 @@ class verification
 { 
     public function loginUser($detail) 
     {
-
-        $email = $detail["correo"];
+        $informacion = new data();
+        $correo = $detail["correo"];
         $contrasena = $detail["contrasena"];
+        $consulta = "SELECT * FROM user WHERE email = :correo ";
+        $stmt = $informacion->connect()->prepare($consulta);
+        $stmt->bindParam(':correo', $correo);
+        $stmt->execute();
+        $detalle = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    
+        if ($detalle) {
+            if(password_verify($contrasena, $detalle['user_password'])) {
+                session_start();
+                $_SESSION["correo_usuario"] = $correo;
+                $_SESSION["contrasena_usuario"] = $contrasena;
+                header("Location: /src/views/profile/profile.php");
+                die();
+            }else {
+                session_start();
+                $_SESSION["mensaje_error_login"] = "Contraseña incorrecta, por favor intente de nuevo.";
+                header("Location: /src/views/login/login.php");
+                die();
+            }
+        }else {
+            session_start();
+            $_SESSION["mensaje_error_login"] = "El usuario no existe, por favor regístrese.";
+            header("Location: /src/views/login/login.php");
+            die();
+        }
+        $informacion->disconnect();
     }
     
     public function agregandoAlum($data)

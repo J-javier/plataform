@@ -18,15 +18,15 @@
                 <div class="flex justify-between mb-7 div">
                     <label for="correo" hidden></label>
                     <input type="text" name="correo" id="correo" class="border-none" required>
-                    <div class="img"><img src="/src/images/email.svg" alt=""></div>                
+                    <div class="img"><img src="/src/images/email.svg" alt="img"></div>                
                 </div>
                 <div class="flex justify-between mb-4  div">
                     <label for="contrasena" hidden></label>
                     <input type="password" name="contrasena" id="contrasena" class="border-none" required>
-                    <div class="img"><img src="/src/images/lock.svg" alt=""></div>
+                    <div class="img"><img src="/src/images/lock.svg" alt="img"></div>
                 </div>
                 <div class="flex justify-end w-[80%]">
-                    <button type="submit" name="ingresar" class="bg-blue-500 text-white px-4 py-2 rounded-md ">Ingresar</button>
+                    <button type="submit" name="login" class="bg-blue-500 text-white px-4 py-2 rounded-md ">Ingresar</button>
                 </div>
             </form>
         </section>
