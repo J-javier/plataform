@@ -40,7 +40,10 @@ class data
         return $this->pdo;
     }
 
-
+    public function disconnect()
+    {
+        $this->pdo = null;
+    }
 }
 
 

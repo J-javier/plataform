@@ -182,42 +182,43 @@
 
     <!-- Modal para crear a un Alumno -->
 
-    <div id="myModal2" class="modal">
+    <div id="myModal2" class="modal"> 
         <div class="modal-content">
             <span id="closeModal2" class="close">&times;</span>
             <h2 class="text-[2rem]">Agregar Alumno</h2>
             <form action="/index.php" method="POST">
                 <div class="form-group">
                     <label class="font-bold" for="dni">DNI</label>
-                    <input type="email" name="dni" id="dni" class="input-field" readonly>
+                    <input type="text" name="dni" id="dni" class="input-field" required>
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="correo">Correo Electronico</label>
-                    <input type="email" name="correo" id="correo" class="input-field" readonly>
+                    <input type="email" name="correo" id="correo" class="input-field" required>
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="contrasena">Contraseña</label>
-                    <input type="password" name="contrasena" id="contrasena" class="input-field" readonly>
+                    <input type="password" name="contrasena" id="contrasena" class="input-field" required>
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="nombre">Nombre(s)</label>
-                    <input type="text" name="nombre" id="nombre" class="input-field">
+                    <input type="text" name="nombre" id="nombre" class="input-field" required>
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="apellido">Apellido(s)</label>
-                    <input type="text" name="apellido" id="apellido" class="input-field">
+                    <input type="text" name="apellido" id="apellido" class="input-field" required>
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="direccion">Direccion</label>
-                    <input type="text" name="direccion" id="direccion" class="input-field">
+                    <input type="text" name="direccion" id="direccion" class="input-field" required>
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="fecha">Fecha de nacimiento</label>
-                    <input type="text" name="fecha" id="fecha" class="input-field">
+                    <input type="text" name="fecha" id="fecha" class="input-field" required>
                 </div>
+               
                 <div class="w-full flex justify-end gap-2">
                     <button type="button" id="closeModalButton2" class="btn2">Close</button>
-                    <button type="submit" class="btn">Guardar Cambios</button>
+                    <button type="submit" class="btn" name="register">Guardar Cambios</button>
                 </div>
             </form>
         </div>

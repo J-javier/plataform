@@ -8,11 +8,25 @@ class mainpage
         include_once($_SERVER["DOCUMENT_ROOT"] . "/src/views/login.php" );
     }
 
-    public function mainmenu($datos)
+    public function login($datos)
     {
-        $datos2 = $datos;
-        $verification = new vefication();
-        $verification->access($datos2);
+        $verification = new verification();
+        $verification->loginUser($datos);
+    }
+    public function addAlumno($datos)
+    {
+        $agregando = new verification();
+        $agregando->agregandoAlum($datos);
+    }
+    public function addMaestro($datos)
+    {
+        $agregandoM = new verification();
+        $agregandoM->agregandoMaestro($datos);
+    }
+    public function addClase($datos)
+    {
+        $agregandoC = new verification();
+        $agregandoC->agregandoClase($datos);
     }
 }
 ?>

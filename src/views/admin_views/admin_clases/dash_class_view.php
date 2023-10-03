@@ -104,14 +104,14 @@
                             </thead>
                             <tbody>
                             <?php require_once($_SERVER["DOCUMENT_ROOT"] ."/src/database/connection.php" );  
-                                $query = "SELECT id_maestro, name_maestro, apellido_maestro, correo_maestro, address, fechaNacimiento FROM maestro" ;
+                                $query = "SELECT * FROM curso" ;
                                 $conn = new data();
                                 $resultado = $conn->connect()->query($query);
                                 while ($row = $resultado->fetch(PDO::FETCH_ASSOC)) {
                                 ?>
                                 <tr class="border border-slate-300 bg-[#f2f2f2] text-[.7rem]">
-                                    <td> 1</td>
-                                    <td class="border border-slate-300">Matematicas</td>
+                                    <td><?= $row["id_curso"] ?></td>
+                                    <td class="border border-slate-300"><?=$row["name_curso"]?></td>
                                     <td class="border border-slate-300"><span class="border-none text-[black] px-1 py-1 rounded-lg">Jorge Alarcons</span></td>
                                     <td class="border border-slate-300 pl-2 "><span class="border-none text-[black] px-1 py-1 rounded-lg">6</span></td>
                                     <td class="border border-slate-300">
@@ -162,7 +162,7 @@
         <div class="modal-content">
             <span id="closeModal2" class="close">&times;</span>
             <h2 class="text-[2rem]">Agregar Clase</h2>
-            <form action="/tu_script_de_php.php" method="POST">
+            <form action="/index.php" method="POST">
                 
                 <div class="form-group">
                     <label class="font-bold " for="nombre">Nombre de la Materia</label>
@@ -172,14 +172,14 @@
                 <div class="form-group">
                     <label class="font-bold " for="role">Mestros disponibles para la clase</label>
                     <select name="role" id="role" class="input-field">
-                        <option value="admin">Matematicas</option>
-                        <option value="maestro">Contabilidad</option>
-                        <option value="alumno">Ciencias Naturales</option>
+                        <option value="admin">Juan Bernardo</option>
+                        <option value="maestro">Maritza Lopez</option>
+                        <option value="alumno">Arturo Sebantes</option>
                     </select>
                 </div>
                 <div class="w-full flex justify-end gap-2">
                     <button type="button" id="closeModalButton2" class="btn2">Close</button>
-                    <button type="submit" class="btn">Guardar Cambios</button>
+                    <button type="submit" class="btn" name="registrarC">Guardar Cambios</button>
                 </div>
             </form>
         </div>

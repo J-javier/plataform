@@ -143,7 +143,7 @@
             <form action="/tu_script_de_php.php" method="POST">
                 <div class="form-group">
                     <label class="font-bold " for="correo2">Correo Electronico</label>
-                    <input type="email" name="correo2" id="correo2" class="input-field" readonly>
+                    <input type="email" name="correo2" id="correo2" class="input-field">
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="nombre2">Nombre</label>
@@ -171,7 +171,7 @@
                 </div>
                 <div class="w-full flex justify-end gap-2">
                     <button type="button" id="closeModalButton" class="btn2">Close</button>
-                    <button type="submit" class="btn">Guardar Cambios</button>
+                    <button type="submit" class="btn" name="registerM">Guardar Cambios</button>
                 </div>
             </form>
         </div>
@@ -184,14 +184,18 @@
         <div class="modal-content">
             <span id="closeModal2" class="close">&times;</span>
             <h2 class="text-[2rem]">Agregar Maestro</h2>
-            <form action="/tu_script_de_php.php" method="POST">
+            <form action="/index.php" method="POST">
                 <div class="form-group">
                     <label class="font-bold " for="correo">Correo Electronico</label>
-                    <input type="email" name="correo" id="correo" class="input-field" readonly>
+                    <input type="email" name="correo" id="correo" class="input-field" >
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="contrasena">Contraseña</label>
-                    <input type="password" name="contrasena" id="contrasena" class="input-field" readonly>
+                    <input type="password" name="contrasena" id="contrasena" class="input-field" >
+                </div>
+                <div class="form-group">
+                    <label class="font-bold " for="matricula">Matricula</label>
+                    <input type="text" name="matricula" id="matricula" class="input-field" >
                 </div>
                 <div class="form-group">
                     <label class="font-bold " for="nombre">Nombre</label>
@@ -219,7 +223,7 @@
                 </div>
                 <div class="w-full flex justify-end gap-2">
                     <button type="button" id="closeModalButton2" class="btn2">Close</button>
-                    <button type="submit" class="btn">Guardar Cambios</button>
+                    <button type="submit" class="btn" name="registrarM">Guardar Cambios</button>
                 </div>
             </form>
         </div>
