@@ -147,7 +147,7 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
                                                     </button>
                                                 </form>
                                             </div>
-                                        </td>
+                                        </td> 
                                     </tr>
                                 <?php } ?>
                             </tbody>
