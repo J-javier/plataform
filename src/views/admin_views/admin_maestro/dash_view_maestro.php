@@ -132,7 +132,11 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
                                     <td class="border border-slate-300">
                                         <div class="w-full flex justify-center gap-2">
                                             <img src="/src/images/pencil.svg" alt="img" id="showModalButton">
-                                            <img src="/src/images/trash.svg" alt="trash">
+                                            <form action="/index.php" method="post">
+                                                <button type="submit" value="<?= $row['id_maestro']?>" name="deleteM" >
+                                                    <img src="/src/images/trash.svg" alt="trash">
+                                                </button>
+                                            </form>
                                         </div>
                                     </td>
                                 </tr>

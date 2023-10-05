@@ -1,5 +1,6 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/userVerification.php" );
+require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/userVerification.php");
+
 
 class mainpage 
 {
@@ -28,5 +29,17 @@ class mainpage
         $agregandoC = new verification();
         $agregandoC->agregandoClase($datos);
     }
+    public function deleteA($datos)
+    {
+        $borrandoA = new verification();
+        $borrandoA->borrarAlumno($datos);   
+    }
+    public function deleteM($datos)
+    {
+        $borrandoM = new verification();
+        $borrandoM->borrarMaestro($datos);   
+    }
+    
+    
 }
 ?>

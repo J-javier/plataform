@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-10-2023 a las 21:45:14
+-- Tiempo de generación: 04-10-2023 a las 00:24:46
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -20,6 +20,90 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `plataform`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `administrador`
+--
+
+CREATE TABLE `administrador` (
+  `id_admin` int(11) NOT NULL,
+  `name_admin` varchar(200) DEFAULT NULL,
+  `correo_admin` varchar(200) DEFAULT NULL,
+  `password_admin` varchar(250) DEFAULT NULL,
+  `rol_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `administrador`
+--
+
+INSERT INTO `administrador` (`id_admin`, `name_admin`, `correo_admin`, `password_admin`, `rol_id`) VALUES
+(3, 'admin', 'admin@admin.com', '$2y$10$S2NePxmvxNpg5W4j2w5d8eKKotYhmdw5JNFxfXlNP4xi8qmVeb6/m', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `alumno`
+--
+
+CREATE TABLE `alumno` (
+  `id_alumno` int(11) NOT NULL,
+  `name_alumno` varchar(150) DEFAULT NULL,
+  `apellido_alumno` varchar(150) DEFAULT NULL,
+  `matricula` varchar(100) DEFAULT NULL,
+  `correo_alumno` varchar(200) DEFAULT NULL,
+  `password_alumno` varchar(250) DEFAULT NULL,
+  `address` varchar(200) DEFAULT NULL,
+  `fechaNacimiento` varchar(80) DEFAULT NULL,
+  `rol_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `alumno`
+--
+
+INSERT INTO `alumno` (`id_alumno`, `name_alumno`, `apellido_alumno`, `matricula`, `correo_alumno`, `password_alumno`, `address`, `fechaNacimiento`, `rol_id`) VALUES
+(7, 'Maria Berta', 'Sanchez', 'G9837', 'maria@mail.com', '$2y$10$FRb3dsPWhZ/1M2qMC2i7H.q16KxOsRomau1N/Rrw5BdzCck3q58S2', 'Rohas 34', '1996-09-24', 2),
+(8, 'Alumno ', 'Prueba', 'L287364', 'alumno@alumno.com', '$2y$10$HY0oRUO96J4.kMRyka0nMuHjQXT29DNjpQLj/1LCf5YRGgLMUUHxa', '5th Av lodecoy', '2000-11-02', 2),
+(9, 'jorge', 'estrada', 'K0987', 'jorge@mail.com', '$2y$10$S2NePxmvxNpg5W4j2w5d8eKKotYhmdw5JNFxfXlNP4xi8qmVeb6/m', '98 main st', '1980-03-12', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asignacion`
+--
+
+CREATE TABLE `asignacion` (
+  `id_asignacion` int(11) NOT NULL,
+  `alumno_id` int(11) DEFAULT NULL,
+  `curso_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `curso`
+--
+
+CREATE TABLE `curso` (
+  `id_curso` int(11) NOT NULL,
+  `name_curso` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `curso`
+--
+
+INSERT INTO `curso` (`id_curso`, `name_curso`) VALUES
+(1, 'Matemáticas'),
+(2, 'Historia'),
+(3, 'Ciencias'),
+(4, 'Inglés'),
+(5, 'Inglés'),
+(6, 'Programación'),
+(7, 'Portugues');
 
 -- --------------------------------------------------------
 
@@ -53,6 +137,32 @@ INSERT INTO `maestro` (`id_maestro`, `name_maestro`, `apellido_maestro`, `matric
 --
 
 --
+-- Indices de la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`id_admin`);
+
+--
+-- Indices de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  ADD PRIMARY KEY (`id_alumno`);
+
+--
+-- Indices de la tabla `asignacion`
+--
+ALTER TABLE `asignacion`
+  ADD PRIMARY KEY (`id_asignacion`),
+  ADD KEY `alumno_id` (`alumno_id`),
+  ADD KEY `curso_id` (`curso_id`);
+
+--
+-- Indices de la tabla `curso`
+--
+ALTER TABLE `curso`
+  ADD PRIMARY KEY (`id_curso`);
+
+--
 -- Indices de la tabla `maestro`
 --
 ALTER TABLE `maestro`
@@ -63,10 +173,45 @@ ALTER TABLE `maestro`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `administrador`
+--
+ALTER TABLE `administrador`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `alumno`
+--
+ALTER TABLE `alumno`
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT de la tabla `asignacion`
+--
+ALTER TABLE `asignacion`
+  MODIFY `id_asignacion` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `curso`
+--
+ALTER TABLE `curso`
+  MODIFY `id_curso` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT de la tabla `maestro`
 --
 ALTER TABLE `maestro`
   MODIFY `id_maestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `asignacion`
+--
+ALTER TABLE `asignacion`
+  ADD CONSTRAINT `asignacion_ibfk_1` FOREIGN KEY (`alumno_id`) REFERENCES `alumno` (`id_alumno`),
+  ADD CONSTRAINT `asignacion_ibfk_2` FOREIGN KEY (`curso_id`) REFERENCES `curso` (`id_curso`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

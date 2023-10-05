@@ -16,7 +16,7 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/styles_admin/edit_maestro_style.css">
-    <script src="/src/script/admin_maestro/script.js" defer></script>
+    <script src="/src/script/admin_maestro/script_edit.js" defer></script>
     <title>Admin Dashboard</title>
 </head>
 
@@ -138,8 +138,12 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
                                         <td><span class="border-none text-[black] px-1 py-1 rounded-lg"><?= $row['fechaNacimiento'] ?></span></td>
                                         <td class="border border-slate-300">
                                             <div class="w-full flex justify-center gap-2">
-                                                <img src="/src/images/pencil.svg" alt="img" id="showModalButton">
-                                                <img src="/src/images/trash.svg" alt="trash">
+                                                <img src="/src/images/pencil.svg" alt="img"  id="showModalButton">
+                                                <form action="/index.php" method="post">
+                                                    <button type="submit" value="<?= $row['id_alumno']?>" name="deleteA" >
+                                                        <img src="/src/images/trash.svg" alt="trash">
+                                                    </button>
+                                                </form>
                                             </div>
                                         </td>
                                     </tr>

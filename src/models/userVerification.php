@@ -120,5 +120,28 @@ class verification
         header("Location: /src/views/admin_views/admin_maestro/dash_view_maestro.php");
         $databaseinf->disconnect();
     }
+    public function borrarAlumno($data)
+    {
+        $databaseinf = new data();
+        $id_alumno=$data["deleteA"];
+        $consulta = "DELETE FROM alumno WHERE id_alumno = :id" ;
+        $stmt = $databaseinf->connect()->prepare($consulta);
+        $stmt->bindParam(':id', $id_alumno, PDO::PARAM_INT);
+        $stmt->execute();
+        header("Location: /src/views/admin_views/admin_alumno/dash_alum_view.php");
+        $databaseinf->disconnect();
+    }
+    public function borrarMaestro($data)
+    {
+        $databaseinf = new data();
+        $id_alumno=$data["deleteM"];
+        $consulta = "DELETE FROM maestro WHERE id_maestro = :id" ;
+        $stmt = $databaseinf->connect()->prepare($consulta);
+        $stmt->bindParam(':id', $id_alumno, PDO::PARAM_INT);
+        $stmt->execute();
+        header("Location: /src/views/admin_views/admin_maestro/dash_view_maestro.php");
+        $databaseinf->disconnect();
+    }
+    
     
 }
