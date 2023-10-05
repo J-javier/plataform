@@ -34,6 +34,9 @@ if($_SERVER["REQUEST_METHOD"] === "POST" ){
     if (isset($_POST["updateM"])) {
         $controller->updateM($_POST);
     } 
+    if (isset($_POST["updateC"])) {
+        $controller->updateC($_POST);
+    } 
 
 }else {
     $controller->index();

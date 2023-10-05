@@ -15,7 +15,7 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/styles_admin/edit_maestro_style.css">
-    <script src="/src/script/admin_maestro/script.js" defer ></script>
+    <script src="/src/script/admin_maestro/script_edit.js" defer ></script>
     <title>Admin Dashboard</title>
 </head>
 <body class="h-screen w-screen">
@@ -126,7 +126,9 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
                                     <td class="border border-slate-300 pl-2 "><span class="border-none text-[black] px-1 py-1 rounded-lg">6</span></td>
                                     <td class="border border-slate-300">
                                         <div class="w-full flex justify-center gap-2">
-                                            <img src="/src/images/pencil.svg" alt="img" id="showModalButton">
+                                            <a href="/src/views/admin_views/admin_clases/edit_class.php?id=<?= $row['id_curso'] ?>">
+                                                <img src="/src/images/pencil.svg" alt="img"  id="showModalButton">
+                                            </a>
                                             <form action="/index.php" method="post">
                                                 <button type="submit" value="<?= $row['id_curso']?>" name="deleteC" >
                                                     <img src="/src/images/trash.svg" alt="trash">
@@ -144,30 +146,6 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
         </section>
     </main>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close">&times;</span>
-            <h2 class="text-[2rem]">Editar Clase</h2>
-            <form action="/tu_script_de_php.php" method="POST">
-                <div class="form-group">
-                    <label class="font-bold " for="nombreMateria">Nombre_Materia</label>
-                    <input type="text" name="nombreMateria" id="nombreMateria" class="input-field">
-                </div>
-                <div class="form-group">
-                    <label class="font-bold " for="role2">Maestro Asignado</label>
-                    <select name="role2" id="role2" class="input-field">
-                        <option value="admin">Juan Bernardo</option>
-                        <option value="maestro">Maritza Lopez</option>
-                        <option value="alumno">Arturo Sebantes</option>
-                    </select>
-                </div>
-                <div class="w-full flex justify-end gap-2">
-                    <button type="button" id="closeModalButton" class="btn2">Close</button>
-                    <button type="submit" class="btn">Guardar Cambios</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
 
     <!-- Modal para agregar una clase -->

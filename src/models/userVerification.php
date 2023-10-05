@@ -211,5 +211,24 @@ class verification
         
         $databaseinf->disconnect();
     }
+    public function actualizandoCurso($data)
+    {
+        $databaseinf = new data();
+        $id = $data["id"]; 
+        $curso = $data["nombre"];
+        
+        
+
+        $consulta = "UPDATE curso SET name_curso = :curso WHERE id_curso = $id";
+
+        $stmt = $databaseinf->connect()->prepare($consulta);
+
+        $stmt->bindParam(':curso', $curso, PDO::PARAM_STR);
+        $stmt->execute();
+
+        header("Location: /src/views/admin_views/admin_clases/dash_class_view.php");
+        
+        $databaseinf->disconnect();
+    }
     
 }

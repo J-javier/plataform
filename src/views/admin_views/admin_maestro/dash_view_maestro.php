@@ -6,7 +6,7 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
     exit(); 
 }
 
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="en">
