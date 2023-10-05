@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-10-2023 a las 20:20:36
+-- Tiempo de generación: 05-10-2023 a las 21:00:46
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -103,7 +103,7 @@ INSERT INTO `curso` (`id_curso`, `name_curso`) VALUES
 (3, 'Ciencias'),
 (4, 'Inglés'),
 (6, 'Programación'),
-(7, 'Portugues'),
+(7, 'Mandarin'),
 (8, 'Educacion Fisica');
 
 -- --------------------------------------------------------

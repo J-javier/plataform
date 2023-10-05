@@ -216,11 +216,7 @@ class verification
         $databaseinf = new data();
         $id = $data["id"]; 
         $curso = $data["nombre"];
-        
-        
-
         $consulta = "UPDATE curso SET name_curso = :curso WHERE id_curso = $id";
-
         $stmt = $databaseinf->connect()->prepare($consulta);
 
         $stmt->bindParam(':curso', $curso, PDO::PARAM_STR);
