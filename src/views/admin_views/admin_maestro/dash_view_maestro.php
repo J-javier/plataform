@@ -15,7 +15,7 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="/src/styles/styles_admin/edit_maestro_style.css">
-    <script src="/src/script/admin_maestro/script.js" defer ></script>
+    <script src="/src/script/admin_maestro/script_edit.js" defer ></script>
     <title>Admin Dashboard</title>
 </head>
 <body class="h-screen w-screen">
