@@ -50,6 +50,11 @@ class mainpage
         $updateA = new verification();
         $updateA->actualizandoAlumno($datos);   
     }
+    public function updateM($datos)
+    {
+        $updateA = new verification();
+        $updateA->actualizandoMaestro($datos);   
+    }
     
     
 }

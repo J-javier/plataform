@@ -25,7 +25,7 @@ $id_maestro = $_GET['id'];
             <div class="modal-content">
                 <h2 class="text-[2rem]">Editar Alumno</h2>
                 <?php 
-                    $query = "SELECT name_maestro, apellido_maestro, correo_alumno, address, fechaNacimiento FROM maestro where id_alumno = :id ";
+                    $query = "SELECT name_maestro, apellido_maestro, correo_maestro, address, fechaNacimiento FROM maestro where id_maestro = :id ";
                     $conn = new data();
                     $stmt = $conn->connect()->prepare($query);
                     $stmt->bindParam(':id', $id_maestro);
@@ -55,11 +55,11 @@ $id_maestro = $_GET['id'];
                     </div>
                     <input type="text" value="<?=$id_maestro?>" name="id" hidden>
                     <div class="w-full flex justify-end gap-2">
-                        <a href="/src/views/admin_views/admin_alumno/dash_alum_view.php">
+                        <a href="/src/views/admin_views/admin_maestro/dash_view_maestro.php">
                             <button type="button" id="closeModalButton" class="btn2">Close</button>
                         </a>
                         <form action="/index.php" method="post">
-                            <button type="submit" class="btn" name="updateA">Guardar Cambios</button>
+                            <button type="submit" class="btn" name="updateM">Guardar Cambios</button>
                         </form>
                     </div>
                 </form>

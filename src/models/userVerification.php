@@ -185,5 +185,37 @@ class verification
         
         $databaseinf->disconnect();
     }
+    public function actualizandoMaestro($data)
+    {
+        $databaseinf = new data();
+        $id = $data["id"]; // Asegúrate de que tengas el ID del alumno que deseas actualizar
+        $nombre = $data["nombre"];
+        $apellido = $data["apellido"];
+        $matricula = $data["dni"]; // Puedes agregar los otros campos aquí
+        $correo = $data["correo"];
+        $direccion = $data["direccion"];
+        $fechaNacimiento = $data["fecha"];
+        $rol = 2;
+
+        // Consulta SQL de actualización
+        $consulta = "UPDATE alumno SET name_alumno = :nombre, apellido_alumno = :apellido, 
+        matricula = :matricula, correo_alumno = :correo, address = :direccion, fechaNacimiento = :fechaNacimiento
+         WHERE id_alumno = $id";
+
+        $stmt = $databaseinf->connect()->prepare($consulta);
+
+        // Enlazar los parámetros
+        $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+        $stmt->bindParam(':apellido', $apellido, PDO::PARAM_STR);
+        $stmt->bindParam(':matricula', $matricula, PDO::PARAM_STR);
+        $stmt->bindParam(':correo', $correo, PDO::PARAM_STR);
+        $stmt->bindParam(':direccion', $direccion, PDO::PARAM_STR);
+        $stmt->bindParam(':fechaNacimiento', $fechaNacimiento, PDO::PARAM_STR);
+        $stmt->execute();
+
+        header("Location: /src/views/admin_views/admin_alumno/dash_alum_view.php");
+        
+        $databaseinf->disconnect();
+    }
     
 }
