@@ -39,6 +39,17 @@ class mainpage
         $borrandoM = new verification();
         $borrandoM->borrarMaestro($datos);   
     }
+    public function deleteC($datos)
+    {
+        $borrandoC = new verification();
+        $borrandoC->borrarCurso($datos);   
+    }
+    
+    public function updateA($datos)
+    {
+        $updateA = new verification();
+        $updateA->actualizandoAlumno($datos);   
+    }
     
     
 }

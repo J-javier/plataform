@@ -134,14 +134,56 @@ class verification
     public function borrarMaestro($data)
     {
         $databaseinf = new data();
-        $id_alumno=$data["deleteM"];
+        $id_maestro=$data["deleteM"];
         $consulta = "DELETE FROM maestro WHERE id_maestro = :id" ;
         $stmt = $databaseinf->connect()->prepare($consulta);
-        $stmt->bindParam(':id', $id_alumno, PDO::PARAM_INT);
+        $stmt->bindParam(':id', $id_maestro, PDO::PARAM_INT);
         $stmt->execute();
         header("Location: /src/views/admin_views/admin_maestro/dash_view_maestro.php");
         $databaseinf->disconnect();
     }
-    
+    public function borrarCurso($data)
+    {
+        $databaseinf = new data();
+        $id_curso=$data["deleteC"];
+        $consulta = "DELETE FROM curso WHERE id_curso = :id" ;
+        $stmt = $databaseinf->connect()->prepare($consulta);
+        $stmt->bindParam(':id', $id_curso, PDO::PARAM_INT);
+        $stmt->execute();
+        header("Location: /src/views/admin_views/admin_clases/dash_class_view.php");
+        $databaseinf->disconnect();
+    }
+    public function actualizandoAlumno($data)
+    {
+        $databaseinf = new data();
+        $id = $data["id"]; // Asegúrate de que tengas el ID del alumno que deseas actualizar
+        $nombre = $data["nombre"];
+        $apellido = $data["apellido"];
+        $matricula = $data["dni"]; // Puedes agregar los otros campos aquí
+        $correo = $data["correo"];
+        $direccion = $data["direccion"];
+        $fechaNacimiento = $data["fecha"];
+        $rol = 2;
+
+        // Consulta SQL de actualización
+        $consulta = "UPDATE alumno SET name_alumno = :nombre, apellido_alumno = :apellido, 
+        matricula = :matricula, correo_alumno = :correo, address = :direccion, fechaNacimiento = :fechaNacimiento
+         WHERE id_alumno = $id";
+
+        $stmt = $databaseinf->connect()->prepare($consulta);
+
+        // Enlazar los parámetros
+        $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+        $stmt->bindParam(':apellido', $apellido, PDO::PARAM_STR);
+        $stmt->bindParam(':matricula', $matricula, PDO::PARAM_STR);
+        $stmt->bindParam(':correo', $correo, PDO::PARAM_STR);
+        $stmt->bindParam(':direccion', $direccion, PDO::PARAM_STR);
+        $stmt->bindParam(':fechaNacimiento', $fechaNacimiento, PDO::PARAM_STR);
+        $stmt->execute();
+
+        header("Location: /src/views/admin_views/admin_alumno/dash_alum_view.php");
+        
+        $databaseinf->disconnect();
+    }
     
 }

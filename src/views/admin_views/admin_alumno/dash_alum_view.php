@@ -138,7 +138,9 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
                                         <td><span class="border-none text-[black] px-1 py-1 rounded-lg"><?= $row['fechaNacimiento'] ?></span></td>
                                         <td class="border border-slate-300">
                                             <div class="w-full flex justify-center gap-2">
-                                                <img src="/src/images/pencil.svg" alt="img"  id="showModalButton">
+                                                <a href="/src/views/admin_views/admin_alumno/edit_alum.php?id=<?= $row['id_alumno'] ?>">
+                                                    <img src="/src/images/pencil.svg" alt="img"  id="showModalButton">
+                                                </a>
                                                 <form action="/index.php" method="post">
                                                     <button type="submit" value="<?= $row['id_alumno']?>" name="deleteA" >
                                                         <img src="/src/images/trash.svg" alt="trash">
@@ -156,42 +158,6 @@ if (!isset($_SESSION["correo_admi"]) || !isset($_SESSION["contrasena_admin"])) {
         </section>
     </main>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span id="closeModal" class="close">&times;</span>
-            <h2 class="text-[2rem]">Editar Alumno</h2>
-            <form action="/index.php" method="POST">
-                <div class="form-group">
-                    <label class="font-bold " for="dni2">DNI</label>
-                    <input type="text" name="dni2" id="dni2" class="input-field">
-                </div>
-                <div class="form-group">
-                    <label class="font-bold " for="correo2">Correo Electronico</label>
-                    <input type="email" name="correo2" id="correo2" class="input-field" readonly>
-                </div>
-                <div class="form-group">
-                    <label class="font-bold " for="nombre2">Nombre(s)</label>
-                    <input type="text" name="nombre2" id="nombre2" class="input-field">
-                </div>
-                <div class="form-group">
-                    <label class="font-bold " for="apellido2">Apellido(s)</label>
-                    <input type="text" name="apellido2" id="apellido2" class="input-field">
-                </div>
-                <div class="form-group">
-                    <label class="font-bold " for="direccion2">Direccion</label>
-                    <input type="text" name="direccion2" id="direccion2" class="input-field">
-                </div>
-                <div class="form-group">
-                    <label class="font-bold " for="fecha2">Fecha de nacimiento</label>
-                    <input type="text" name="fecha2" id="fecha2" class="input-field">
-                </div>
-                <div class="w-full flex justify-end gap-2">
-                    <button type="button" id="closeModalButton" class="btn2">Close</button>
-                    <button type="submit" class="btn">Guardar Cambios</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
 
     <!-- Modal para crear a un Alumno -->

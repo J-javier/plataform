@@ -1,17 +1,3 @@
-// Función para mostrar el primer modal
-function showModal() {
-    document.getElementById("myModal").style.display = "block";
-}
-
-// Función para ocultar el primer modal
-function closeModal() {
-    document.getElementById("myModal").style.display = "none";
-}
-
-// Asigna los eventos de clic a los botones o elementos correspondientes para el primer modal
-document.getElementById("showModalButton").addEventListener("click", showModal);
-document.getElementById("closeModal").addEventListener("click", closeModal);
-document.getElementById("closeModalButton").addEventListener("click", closeModal);
 
 /* This is for the second modal */
 

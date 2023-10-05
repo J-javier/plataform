@@ -16,7 +16,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST" ){
     if(isset($_POST["registrarC"])){
         $controller->addClase($_POST);
     }
-    
     if (isset($_POST["login"])) {
         $controller->login($_POST);
     } 
@@ -25,6 +24,12 @@ if($_SERVER["REQUEST_METHOD"] === "POST" ){
     } 
     if (isset($_POST["deleteM"])) {
         $controller->deleteM($_POST);
+    } 
+    if (isset($_POST["deleteC"])) {
+        $controller->deleteC($_POST);
+    } 
+    if (isset($_POST["updateA"])) {
+        $controller->updateA($_POST);
     } 
 
 }else {
