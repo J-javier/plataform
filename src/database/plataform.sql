@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-10-2023 a las 20:00:44
+-- Tiempo de generación: 05-10-2023 a las 20:20:36
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -68,7 +68,8 @@ INSERT INTO `alumno` (`id_alumno`, `name_alumno`, `apellido_alumno`, `matricula`
 (8, 'Alumno ', 'Prueba', 'L287364', 'alumno@alumno.com', '$2y$10$HY0oRUO96J4.kMRyka0nMuHjQXT29DNjpQLj/1LCf5YRGgLMUUHxa', '5th Av lodecoy', '2000-11-02', 2),
 (9, 'jorge', 'estrada', 'K0987', 'jorge@mail.com', '$2y$10$S2NePxmvxNpg5W4j2w5d8eKKotYhmdw5JNFxfXlNP4xi8qmVeb6/m', '98 main st', '1980-03-12', 2),
 (11, 'Santiago', 'Palma', 'J83743', 'santiago@mail.com', '$2y$10$hRWwhmq5rVxCHPIJ.WTig.4dN85tQpx9nP4Sam20hQBGF2AJVtTyq', 'Marcos 098', '2000-11-23', 2),
-(12, 'Marco', 'Arebalo', 'G23984', 'Marco@mail.com', '$2y$10$jHhAgnBJbOd8G9TtQE2bD.yB7QAet/sMulmCOWZCqIfUl6WQ9lD3S', '8 Av Calvario Norte', '1999-09-31', 2);
+(12, 'Marco', 'Arebalo', 'G23984', 'Marco@mail.com', '$2y$10$jHhAgnBJbOd8G9TtQE2bD.yB7QAet/sMulmCOWZCqIfUl6WQ9lD3S', '8 Av Calvario Norte', '1999-09-31', 2),
+(13, 'Esdras ', 'Arquin', 'L2837', 'Esdras@mail.com', '$2y$10$9z8b6rqcixFyeuk.G0JyAOvkdqjQkZDQ/yXGFZA4L7RkLRbLs2OJW', '8 av zona costera', '1998-12-03', 2);
 
 -- --------------------------------------------------------
 
@@ -131,7 +132,8 @@ INSERT INTO `maestro` (`id_maestro`, `name_maestro`, `apellido_maestro`, `matric
 (7, 'Pedro', 'Aquiles', 'J8d8765', 'PedroA@mail.com', '$2y$10$1OHw3ekyZDk3.JGiuUmyBOTb02JVYWVH05v0QN6bcojEVRkS99uj6', 'Fresno 98', '1990-11-24', 3),
 (8, 'maestro', 'prueba', 'F232445', 'maestro@maestro.com', '$2y$10$WNzvyRzcbh7cDdCtyFIrse19yHL616LeqXn5iMCKb7iN.G3hUwnC6', '98 Calle ', '1989-02-23', 3),
 (9, 'Eugenio', 'Zamora', 'B83743', 'eugenio@mail.com', '$2y$10$CcQyIEBVujaTM2SfFhh7yeTL8W3p65T1pD02toChI54bfIHq8YQcS', '8Av lomas de portugal', '1995-12-08', 3),
-(10, 'Juan', 'Paz', 'G23244', 'juanpa@mail.com', '$2y$10$FkmVTrJww.j/xVfe8e4/F.ZGVyXiF6QJ96AVp0N9j0Cq0133.F4Ki', 'Av sur 908', '1996-09-16', 3);
+(10, 'Juan', 'Paez', 'G23244', 'juanpa@mail.com', '$2y$10$FkmVTrJww.j/xVfe8e4/F.ZGVyXiF6QJ96AVp0N9j0Cq0133.F4Ki', 'Av Noreste 908', '1996-09-24', 3),
+(11, 'Maria', 'Jose', 'Q2324', 'mariaj@mail.com', '$2y$10$LYVj1BSziqfT.UwJheRv7.WyCg9KaRFC3bQ9zWNimMfGwKFiD1pzW', '34 cruz sur', '1995-11-19', 3);
 
 --
 -- Índices para tablas volcadas
@@ -183,7 +185,7 @@ ALTER TABLE `administrador`
 -- AUTO_INCREMENT de la tabla `alumno`
 --
 ALTER TABLE `alumno`
-  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_alumno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `asignacion`
@@ -201,7 +203,7 @@ ALTER TABLE `curso`
 -- AUTO_INCREMENT de la tabla `maestro`
 --
 ALTER TABLE `maestro`
-  MODIFY `id_maestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_maestro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
